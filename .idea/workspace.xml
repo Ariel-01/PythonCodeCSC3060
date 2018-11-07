@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dca943d9-6f6f-48b7-a096-dee42f6069dd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestCharacteristics.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestCharacteristics.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -70,8 +68,8 @@
       <file leaf-file-name="Characteristics.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Characteristics.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="513" column="4" lean-forward="true" selection-start-line="513" selection-start-column="4" selection-end-line="519" selection-end-column="32" />
+            <state relative-caret-position="-1">
+              <caret line="460" column="26" lean-forward="true" selection-start-line="460" selection-start-column="26" selection-end-line="460" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -79,8 +77,8 @@
       <file leaf-file-name="TestCharacteristics.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TestCharacteristics.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="184" column="31" selection-start-line="184" selection-start-column="31" selection-end-line="184" selection-end-column="31" />
+            <state relative-caret-position="713">
+              <caret line="295" column="22" selection-start-line="295" selection-start-column="22" selection-end-line="295" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -116,7 +114,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="438" />
     <option name="width" value="561" />
     <option name="height" value="303" />
@@ -268,7 +266,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="3" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -316,15 +314,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Characteristics.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="513" column="4" lean-forward="true" selection-start-line="513" selection-start-column="4" selection-end-line="519" selection-end-column="32" />
+        <state relative-caret-position="-1">
+          <caret line="460" column="26" lean-forward="true" selection-start-line="460" selection-start-column="26" selection-end-line="460" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TestCharacteristics.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="184" column="31" selection-start-line="184" selection-start-column="31" selection-end-line="184" selection-end-column="31" />
+        <state relative-caret-position="713">
+          <caret line="295" column="22" selection-start-line="295" selection-start-column="22" selection-end-line="295" selection-end-column="22" />
         </state>
       </provider>
     </entry>

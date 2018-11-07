@@ -182,11 +182,11 @@ def testCharEleven():
             testData[i,j] = WHITE
 
     testData[5,2] = BLACK
-    testData[6,1] = BLACK #left
+    testData[6,1] = BLACK #lower
     testData[6,15] = BLACK
     testData[7,14] = BLACK # lower left
     testData[12,13] = BLACK
-    testData[11,12] = BLACK
+    testData[11,14] = BLACK #lower right
     testData[17,10] = BLACK
     testData[17,11] = BLACK
     answer = Characteristics.checkCharEleven(testData)
@@ -207,6 +207,8 @@ def testCharTwelve():
     testData[5,15] = BLACK#upper right
     testData[12,13] = BLACK
     testData[11,12] = BLACK#upper left
+    testData[19,1] = BLACK
+    testData[19,2] = BLACK
     answer = Characteristics.checkCharTwelve(testData)
 
     if(answer == 1): return 1
@@ -220,15 +222,79 @@ def testCharThirteen():
             testData[i,j] = WHITE
 
     testData[5,2] = BLACK
-    testData[4,2] = BLACK #upper
+    testData[6,1] = BLACK #lower left
     testData[6,14] = BLACK
-    testData[5,15] = BLACK#upper right
+    testData[5,13] = BLACK#upper left
     testData[12,13] = BLACK
-    testData[11,12] = BLACK#upper left
+    testData[12,11] = BLACK#left
+    testData[19,1] = BLACK
+    testData[19,2] = BLACK
     answer = Characteristics.checkCharThirteen(testData)
 
     if(answer == 1): return 1
     else: return 0
 
+#Number of black pixels with no neighbours in the upper-right, right, or lower-right positions
+def testCharFourteen():
+    testData = [[]]
+    for i in range(1,20):
+        for j in range(1,20):
+            testData[i,j] = WHITE
 
+    testData[5,2] = BLACK
+    testData[4,3] = BLACK #upper right
+    testData[6,14] = BLACK
+    testData[6,15] = BLACK #right
+    testData[12,13] = BLACK
+    testData[12,14] = BLACK#lower-right
+    testData[6,15] = BLACK
+    testData[6,14] = BLACK #left
 
+    answer = Characteristics.checkCharFourteen(testData)
+
+    if(answer == 1): return 1
+    else: return 0
+
+#Two black pixels A and B are connected if they are neighbours of each other, or if a black pixel neighbour of A is connected to B (this definition is actually symmetric); a connected region is a maximal set of black pixels
+#which are connected to each other; this feature has the number of connected regions in the image
+def testCharFifteen ():
+    testData = [[]]
+    for i in range(1,20):
+        for j in range(1,20):
+            testData[i,j] = WHITE
+
+    testData[10,12] = BLACK
+    testData[10,13] = BLACK
+    testData[10,14] = BLACK
+    answer = Characteristics.checkCharFifteen(testData)
+
+    if(answer == 1): return 1
+    else: return 0
+
+#In a written character, an “eye” is a region of whitespace that is completely surrounded by lines of the character. For example, “A” contains one eye, “B” contains two eyes, and “C” contains no eyes. A
+#region of whitespace is an eye if there is a ring of black pixels surrounding it which are all connected (i.e. they form a chain of neighbours). This
+#feature is the number of eyes in the image.
+def testCharSixteen ():
+    testData = [[]]
+    for i in range(1,20):
+        for j in range(1,20):
+            testData[i,j] = WHITE
+
+    testData[10,12] = BLACK
+    testData[10,13] = BLACK
+    testData[10,14] = BLACK
+    testData[11,12] = BLACK
+    testData[11,14] = BLACK
+    testData[12,12] = BLACK
+    testData[12,13] = BLACK
+    testData[12,14] = BLACK
+    answer = Characteristics.checkCharSixteen(testData)
+
+    if(answer == 1): return 1
+    else: return 0
+
+def testCharSevensteen():
+    testData = [[]]
+    for i in range(1,20):
+        for j in range(1,20):
+            testData[i,j] = WHITE
