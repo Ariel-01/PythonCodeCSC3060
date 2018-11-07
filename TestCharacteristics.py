@@ -292,9 +292,41 @@ def testCharSixteen ():
 
     if(answer == 1): return 1
     else: return 0
-
-def testCharSevensteen():
+#Number of rows with at least five black pixels) minus (number of columns with at least five black pixels.
+def testCharSeventeen():
     testData = [[]]
     for i in range(1,20):
         for j in range(1,20):
             testData[i,j] = WHITE
+
+    testData[0,1] = BLACK
+    testData[0,2] = BLACK
+    testData[0,3] = BLACK
+    testData[0,4] = BLACK
+    testData[0,5] = BLACK
+
+    testData[12,1] = BLACK
+    testData[12,2] = BLACK
+    testData[12,3] = BLACK
+    testData[12,4] = BLACK
+    testData[12,5] = BLACK
+
+    answer = Characteristics.checkCharSeventeen(testData)
+    if(answer == 0): return 1
+    else: return 0
+
+def testCharEighssteen():
+    testData = [[]]
+    for i in range(1,20):
+        for j in range(1,20):
+            testData[i,j] = WHITE
+
+    testData[10,12] = BLACK
+    testData[10,13] = BLACK
+    testData[10,14] = BLACK
+    testData[11,12] = BLACK
+    testData[11,14] = BLACK
+    testData[12,12] = BLACK
+    testData[12,13] = BLACK
+    testData[12,14] = BLACK
+
