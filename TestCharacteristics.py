@@ -3,14 +3,87 @@ import Characteristics
 BLACK = 1
 WHITE = 0
 
+def main():
+    result = testCharOne()
+    if(result == 1): print("test one passed")
+    else: print ("test one failed")
+
+    result = testCharTwo()
+    if(result == 1): print("test two passed")
+    else: print ("test two failed")
+
+    result = testCharThree()
+    if(result == 1): print("test three passed")
+    else: print ("test three failed")
+
+    result = testCharFour()
+    if(result == 1): print("test four passed")
+    else: print ("test four failed")
+
+    result = testCharFive()
+    if(result == 1): print("test five passed")
+    else: print ("test five failed")
+
+    result = testCharSix()
+    if(result == 1): print("test six passed")
+    else: print ("test six failed")
+
+    result = testCharSeven()
+    if(result == 1): print("test seven passed")
+    else: print ("test seven failed")
+
+    result = testCharEight()
+    if(result == 1): print("test eight passed")
+    else: print ("test eight failed")
+
+    result = testCharNine()
+    if(result == 1): print("test nine passed")
+    else: print ("test nine failed")
+
+    result = testCharTen()
+    if(result == 1): print("test ten passed")
+    else: print ("test ten failed")
+
+    result = testCharEleven()
+    if(result == 1): print("test eleven passed")
+    else: print ("test eleven failed")
+
+    result = testCharTwelve()
+    if(result == 1): print("test Twelve passed")
+    else: print ("test Twelve failed")
+
+    result = testCharThirteen()
+    if(result == 1): print("test Thirteen passed")
+    else: print ("test Thirteen failed")
+
+    result = testCharFourteen()
+    if(result == 1): print("test fourteen passed")
+    else: print("test fourteen failed")
+
+    result = testCharFifteen()
+    if(result == 1): print("test Fifteen passed")
+    else: print("test Fifteen failed")
+
+    result = testCharSixteen()
+    if(result == 1): print("test Sixteen passed")
+    else: print("test Sixteen failed")
+
+    result = testCharSeventeen()
+    if(result == 1): print("test Seventeen passed")
+    else: print("test Seventeen failed")
+
+    result = testCharEighssteen()
+    if(result == 1): print("test Eighteen passed")
+    else: print("test Eighteen failed")
+
 #checking the number of black pixels
 def testCharOne():
     testData = [[]]
     for i in range(1,20):
         for j in range(1,20):
-            testData[i,j] = WHITE
+            testData[i][j] = WHITE
 
-    testData[0,1] = BLACK
+    testData[0][1] = BLACK
     answer = Characteristics.checkCharOne(testData)
 
     if(answer == 1): return  1
@@ -21,11 +94,11 @@ def testCharTwo():
     testData = [[]]
     for i in range(1,20):
         for j in range(1,20):
-            testData[i,j] = WHITE
+            testData[i][j] = WHITE
 
-    testData[0,1] = BLACK
-    testData[1,1] = BLACK
-    testData[3,1] = BLACK
+    testData[2][1] = BLACK
+    testData[1][1] = BLACK
+    testData[3][1] = BLACK
     answer = Characteristics.checkCharTwo(testData)
 
     if(answer == 3): return 1
@@ -38,7 +111,7 @@ def testCharThree():
         for j in range(1,20):
             testData[i,j] = WHITE
 
-    testData[0,1] = BLACK
+    testData[4,1] = BLACK
     testData[1,2] = BLACK
     testData[3,3] = BLACK
     answer = Characteristics.checkCharThree(testData)
@@ -321,6 +394,14 @@ def testCharEighssteen():
         for j in range(1,20):
             testData[i,j] = WHITE
 
+    testData[3,12] = BLACK
+    testData[4,12] = BLACK
+    testData[5,12] = BLACK
+    testData[6,12] = BLACK
+    testData[7,12] = BLACK
+    testData[8,12] = BLACK
+    testData[9,12] = BLACK
+
     testData[10,12] = BLACK
     testData[10,13] = BLACK
     testData[10,14] = BLACK
@@ -330,3 +411,9 @@ def testCharEighssteen():
     testData[12,13] = BLACK
     testData[12,14] = BLACK
 
+    answer = Characteristics.checkCharEighteen(testData)
+    if(answer == 'b'): return 1
+    else: return 0
+
+#run tests
+main()
