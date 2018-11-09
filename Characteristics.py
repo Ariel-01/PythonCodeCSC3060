@@ -1,16 +1,17 @@
 import os
-
-BLACK = 1
-WHITE = 0
+import Ciarans
+BLACK = '1'
+WHITE = '0'
 MAX_ROWS = 20
 
 
 # num 1, amount of black pixels
 def checkCharOne(image):
     numBlack = 0
-    for i in range(1, 20):
-        for j in range(1, 20):
-            if (image[i, j] == BLACK): numBlack += 1
+    for i in range(20):
+        for j in range(20):
+            if (image[i][j] == BLACK):
+                numBlack += 1
 
     return numBlack
 
@@ -21,7 +22,7 @@ def checkCharTwo(image):
     rowCounter = 0
     while (rowCounter < MAX_ROWS):
         for j in range(1, 20):
-            if (image[rowCounter, j] == BLACK):
+            if (image[rowCounter][j] == BLACK):
                 rowBlack += 1
                 break  # does break work like this in python?
         rowCounter += 1
@@ -35,7 +36,7 @@ def checkCharThree(image):
     colCounter = 0
     while (colCounter < MAX_ROWS):
         for j in range(1, 20):
-            if (image[j, colCounter] == BLACK):
+            if (image[j][colCounter] == BLACK):
                 colBlack += 1
                 break  # does break work like this in python?
 
@@ -57,7 +58,7 @@ def checkCharFive(image):
     while (rowCounter < MAX_ROWS):
         blackCount = 0
         for j in range(1, 20):
-            if (image[rowCounter, j] == BLACK):
+            if (image[rowCounter][ j] == BLACK):
                 blackCount += 1
 
         if (blackCount == 1): rowBlack += 1
@@ -74,7 +75,7 @@ def checkCharSix(image):
     while (colCounter < MAX_ROWS):
         blackCount = 0
         for j in range(1, 20):
-            if (image[j, colCounter] == BLACK):
+            if (image[j][ colCounter] == BLACK):
                 blackCount += 1
 
         if (blackCount == 1): colBlack += 1
@@ -91,7 +92,7 @@ def checkCharSeven(image):
     while (rowCounter < MAX_ROWS):
         blackCount = 0
         for j in range(1, 20):
-            if (image[rowCounter, j] == BLACK):
+            if (image[rowCounter][j] == BLACK):
                 blackCount += 1
 
         if (blackCount == 5): rowBlack += 1
@@ -108,7 +109,7 @@ def checkCharEight(image):
     while (colCounter < MAX_ROWS):
         blackCount = 0
         for j in range(1, 20):
-            if (image[j, colCounter] == BLACK):
+            if (image[j][colCounter] == BLACK):
                 blackCount += 1
 
         if (blackCount == 5): colBlack += 1
@@ -123,29 +124,29 @@ def checkCharNine(image):
     for i in range(1, 20):
         for j in range(1, 20):
             hasBlack = False
-            if (image[i, j] == BLACK):
+            if (image[i][ j] == BLACK):
                 if (j < 20):  # right section
-                    if (image[i, (j + 1)] == BLACK):  # right
+                    if (image[i][(j + 1)] == BLACK):  # right
                         hasBlack = True
                         break
                     elif (i < 20):
-                        if (image[(i + 1), (j + 1)] == BLACK):  # upper right
+                        if (image[(i + 1)][(j + 1)] == BLACK):  # upper right
                             hasBlack = True
                             break
                     elif (i > 1 == BLACK):
-                        if (image[(i - 1), (j + 1)]):  # lower right
+                        if (image[(i - 1)][ (j + 1)]):  # lower right
                             hasBlack = True
                             break
                 if (j > 1):  # left section
-                    if (image[i, (j - 1)] == BLACK):  # left
+                    if (image[i][(j - 1)] == BLACK):  # left
                         hasBlack = True
                         break
                     elif (i < 20 == BLACK):  # upper left
-                        if (image[(i + 1), (j - 1)] == BLACK):
+                        if (image[(i + 1)][ (j - 1)] == BLACK):
                             hasBlack = True
                             break
                     elif (i > 1) == BLACK:  # lower left
-                        if (image[(i - 1), (j - 1)]):
+                        if (image[(i - 1)][ (j - 1)]):
                             hasBlack = True
                             break
                 if (image[(i + 1), j] == BLACK):  # up
@@ -213,19 +214,19 @@ def checkCharEleven(image):
     continueLoop = False
     for i in range(1, 20):
         for j in range(1, 20):
-            if (image[i, j] == BLACK):
+            if (image[i][j] == BLACK):
                 if (j < 20):  # right section
                     if (i > 1):
-                        if (image[(i - 1), (j + 1)] != BLACK):  # lower right
+                        if (image[(i - 1)][(j + 1)] != BLACK):  # lower right
                             continueLoop = True
                             break
                 if(i > 1):
-                    if (image[(i - 1), j] != BLACK):  # down
+                    if (image[(i - 1)][ j] != BLACK):  # down
                         continueLoop = True
                         break
                 if (j > 1):  # left section
                     if (i > 1):  # lower left
-                        if (image[(i - 1), (j - 1)]):
+                        if (image[(i - 1)][ (j - 1)]):
                             continueLoop = True
                             break
         if(continueLoop): noNeigh +=1
@@ -238,19 +239,19 @@ def checkCharTwelve(image):
     continueLoop = False
     for i in range(1, 20):
         for j in range(1, 20):
-            if (image[i, j] == BLACK):
+            if (image[i][ j] == BLACK):
                 if (j < 20):  # right section
                     if (i > 1):
-                        if (image[(i - 1), (j + 1)] != BLACK):  # lower left
+                        if (image[(i - 1)][ (j + 1)] != BLACK):  # lower left
                             continueLoop = True
                             break
                 if(i < 20):
-                    if (image[(i + 1), j] != BLACK):  # up
+                    if (image[(i + 1)][j] != BLACK):  # up
                         continueLoop = True
                         break
                 if (j > 20):
                     if (i > 20):  # upper right
-                        if (image[(i + 1), (j + 1)]):
+                        if (image[(i + 1)][ (j + 1)]):
                             continueLoop = True
                             break
         if(continueLoop): noNeigh +=1
@@ -263,19 +264,19 @@ def checkCharThirteen(image):
     continueLoop = False
     for i in range(1, 20):
         for j in range(1, 20):
-            if (image[i, j] == BLACK):
+            if (image[i][ j] == BLACK):
                 if (j < 20):  # right section
                     if (i > 1):
-                        if (image[(i + 1), (j - 1)] != BLACK):  # upper left
+                        if (image[(i + 1)][ (j - 1)] != BLACK):  # upper left
                             continueLoop = True
                             break
                 if(j > 1):
-                    if (image[i, (j - 1)] != BLACK):  # left
+                    if (image[i][ (j - 1)] != BLACK):  # left
                         continueLoop = True
                         break
                 if (j > 1):
                     if (i > 1):  # lower left
-                        if (image[(i - 1), (j - 1)]):
+                        if (image[(i - 1)][ (j - 1)]):
                             continueLoop = True
                             break
         if(continueLoop): noNeigh +=1
@@ -288,19 +289,19 @@ def checkCharFourteen(image):
     continueLoop = False
     for i in range(1, 20):
         for j in range(1, 20):
-            if (image[i, j] == BLACK):
+            if (image[i][ j] == BLACK):
                 if (j < 20):  # right section
                     if (i > 1):
-                        if (image[(i + 1), (j + 1)] != BLACK):  # upper right
+                        if (image[(i + 1)][ (j + 1)] != BLACK):  # upper right
                             continueLoop = True
                             break
                 if(j > 1):
-                    if (image[i, (j + 1)] != BLACK):  # right
+                    if (image[i][ (j + 1)] != BLACK):  # right
                         continueLoop = True
                         break
                 if (j > 20):
                     if (i > 20):  # lower right
-                        if (image[(i - 1), (j +1)]):
+                        if (image[(i - 1)][ (j +1)]):
                             continueLoop = True
                             break
         if(continueLoop): noNeigh +=1
@@ -333,38 +334,38 @@ def checkConnected(image, row, col, parent):
 
     if(parent[0] == -1): #if this is the first black pixel in the graph
         if(row < 20):
-            if(image[row + 1,col] == BLACK):hasConnections+=1
+            if(image[row + 1][col] == BLACK):hasConnections+=1
         if(row > 1):
-            if(image[row - 1, col] == BLACK): hasConnections+=1
+            if(image[row - 1][ col] == BLACK): hasConnections+=1
         if(col > 1):
-            if(image[row, col - 1] == BLACK): hasConnections+=1
+            if(image[row][ col - 1] == BLACK): hasConnections+=1
         if(col < 20):
-            if(image[row,col + 1] == BLACK): hasConnections+=1
+            if(image[row][col + 1] == BLACK): hasConnections+=1
         if(col > 1 and row > 1):
-            if(image[row - 1, col - 1] == BLACK): hasConnections+=1
+            if(image[row - 1][ col - 1] == BLACK): hasConnections+=1
         if(col < 20 and row > 1):
-            if(image[row - 1, col + 1] == BLACK): hasConnections+=1
+            if(image[row - 1][ col + 1] == BLACK): hasConnections+=1
         if(col < 20 and row < 20):
-            if(image[row + 1, col + 1] == BLACK): hasConnections+=1
+            if(image[row + 1][ col + 1] == BLACK): hasConnections+=1
         if(col > 1 and row < 20):
-            if(image[row + 1, col - 1] == BLACK): hasConnections+=1
+            if(image[row + 1][ col - 1] == BLACK): hasConnections+=1
     else:
         if(row < 20 and (row + 1, col) != parent):
-            if(image[row + 1,col] == BLACK):hasConnections+=1
+            if(image[row + 1][col] == BLACK):hasConnections+=1
         if(row > 1 and (row - 1, col) != parent):
-            if(image[row - 1, col] == BLACK): hasConnections+=1
+            if(image[row - 1][ col] == BLACK): hasConnections+=1
         if(col > 1 and (row, col - 1) != parent):
-            if(image[row, col - 1] == BLACK): hasConnections+=1
+            if(image[row][ col - 1] == BLACK): hasConnections+=1
         if(col < 20 and (row, col + 1) != parent):
-            if(image[row,col + 1] == BLACK): hasConnections+=1
+            if(image[row][col + 1] == BLACK): hasConnections+=1
         if(col > 1 and row > 1 and (row - 1, col -1) != parent):
-            if(image[row - 1, col - 1] == BLACK): hasConnections+=1
+            if(image[row - 1][ col - 1] == BLACK): hasConnections+=1
         if(col < 20 and row > 1 and  (row - 1, col +1) != parent):
-            if(image[row - 1, col + 1] == BLACK): hasConnections+=1
+            if(image[row - 1][ col + 1] == BLACK): hasConnections+=1
         if(col < 20 and row < 20 and  (row + 1, col +1) != parent):
-            if(image[row + 1, col + 1] == BLACK): hasConnections+=1
+            if(image[row + 1][ col + 1] == BLACK): hasConnections+=1
         if(col > 1 and row < 20 and   (row + 1, col - 1) != parent):
-            if(image[row + 1, col - 1] == BLACK): hasConnections+=1
+            if(image[row + 1][ col - 1] == BLACK): hasConnections+=1
 
 
     return hasConnections
@@ -372,28 +373,28 @@ def checkConnected(image, row, col, parent):
 def getNeighbours(image, row, col):
     connections = []
     if(row < 20):
-        if(image[row + 1,col] == BLACK):
+        if(image[row + 1][col] == BLACK):
             connections.append((row + 1,col))
         if(row > 1):
-            if(image[row - 1, col] == BLACK):
+            if(image[row - 1][col] == BLACK):
                 connections.append((row - 1,col))
         if(col > 1):
-            if(image[row, col - 1] == BLACK):
+            if(image[row][col - 1] == BLACK):
                 connections.append((row ,col- 1))
         if(col < 20):
-            if(image[row,col + 1] == BLACK):
+            if(image[row][col + 1] == BLACK):
                  connections.append((row ,col+ 1))
         if(col > 1 and row > 1):
-            if(image[row - 1, col - 1] == BLACK):
+            if(image[row - 1][ col - 1] == BLACK):
                 connections.append((row - 1,col - 1))
         if(col < 20 and row > 1):
-            if(image[row - 1, col + 1] == BLACK):
+            if(image[row - 1][ col + 1] == BLACK):
                 connections.append((row - 1,col + 1))
         if(col < 20 and row < 20):
-            if(image[row + 1, col + 1] == BLACK):
+            if(image[row + 1][ col + 1] == BLACK):
                 connections.append((row + 1,col + 1))
         if(col > 1 and row < 20):
-            if(image[row + 1, col - 1] == BLACK):
+            if(image[row + 1][col - 1] == BLACK):
                 connections.append((row + 1,col - 1))
 
     return connections
@@ -483,13 +484,13 @@ def findLine(image):
     line = []
     for col in range(1,20):
         for row in range(1,20):
-            if(image[row,col] == BLACK):
+            if(image[row][col] == BLACK):
                 if(col > 1 and col < 20):
-                    if(image[row,col-1] == WHITE and image[row,col+1] == WHITE): line.append((row,col))
+                    if(image[row][col-1] == WHITE and image[row][col+1] == WHITE): line.append((row,col))
                 if(col == 1):
-                    if(image[row,col+1] == WHITE):line.append((row,col))
+                    if(image[row][col+1] == WHITE):line.append((row,col))
                 if(col == 20):
-                    if(image[row,col - 1] == WHITE): line.append((row,col))
+                    if(image[row][col - 1] == WHITE): line.append((row,col))
 
             if(len(line) > 0): return line
 
@@ -520,3 +521,6 @@ def checkCharEighteen(image):
                 else: return 'd'
 
     return 'failed'
+
+def main():
+    print("tities")
